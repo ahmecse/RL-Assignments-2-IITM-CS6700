@@ -31,7 +31,8 @@ A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms 
 5.  [Setup & Installation](#🚀-setup--installation)
 6.  [Usage](#▶️-usage)
 7.  [Results](#📊-results)
-8.  [References](##🔖-References)
+8.  [References](#🔖-references)
+
 
 
 ---
@@ -203,6 +204,7 @@ Performance comparison plots (averaged over 5 seeds, showing mean ± std dev) ar
 ---
 
 ## 🔖 References
+
 
 1. Wang, Z., Schaul, T., Hessel, M., Van Hasselt, H., Silver, D., & de Freitas, N. (2016). *Dueling Network Architectures for Deep Reinforcement Learning*. In Proceedings of the 33rd International Conference on Machine Learning (ICML’16).  
 2. Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., … & Hassabis, D. (2015). *Human-level control through deep reinforcement learning*. Nature, 518(7540), 529–533.  
