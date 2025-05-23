@@ -14,10 +14,10 @@ A comparative study of Dueling-DQN and Monte Carlo REINFORCE algorithms on the *
 
    * [Dueling DQN Variants](#dueling-dqn-variants)
    * [Monte Carlo REINFORCE Variants](#monte-carlo-reinforce-variants)
-4. [Setup & Installation](#setup--installation)
 5. [Usage](#usage)
 6. [Results](#results)
 7. [Project Structure](#project-structure)
+
 
 ---
 
@@ -55,28 +55,6 @@ We compare each algorithm’s two variants over 5 random seeds, plotting mean ±
 ### Monte Carlo REINFORCE Variants
 
 ![MC-REINFORCE Update](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte-Carlo%20REINFORCE.JPG) 
-
----
-
-## 🚀 Setup & Installation
-
-1. **Clone repository**
-
-   ```bash
-   git clone https://github.com/your-org/CS6700-PA2.git
-   cd CS6700-PA2
-   ```
-2. **Create virtual environment**
-
-   ```bash
-   python3 -m venv venv && source venv/bin/activate
-   ```
-3. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
 ---
 
 ## ▶️ Usage
@@ -109,19 +87,16 @@ All scripts accept these flags:
 
 ## 📊 Results
 
-Plots are saved in `results/`:
+Plots are saved in the `results/` directory. Below are the performance comparisons (mean ± variance over 5 seeds):
 
-```text
-results/
-├── acrobot_dueling_dqn.png    # Type-1 vs Type-2 in Acrobot
-├── cartpole_dueling_dqn.png   # Type-1 vs Type-2 in CartPole
-├── acrobot_reinforce.png      # w/o vs w/ baseline in Acrobot
-└── cartpole_reinforce.png     # w/o vs w/ baseline in CartPole
-```
+|                                                       **Acrobot Dueling-DQN**                                                       |                                                        **CartPole Dueling-DQN**                                                       |
+| :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: |
+| ![Acrobot Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_Acrobot-v1_Plot.png) | ![CartPole Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_CartPole_v1_Plot.png) |
 
-![Sample Plot](results/acrobot_dueling_dqn.png)
 
-*Each plot shows episodic return mean ± variance over 5 seeds.*
+|                                                               **Acrobot REINFORCE**                                                               |                                                              **CartPole REINFORCE**                                                             |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Acrobot REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_WithOut_BeseLine_Plot.png) | ![CartPole REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_With_BeseLine_Plot.png) |
 
 ---
 
