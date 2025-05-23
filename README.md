@@ -1,6 +1,12 @@
 # CS6700 Programming Assignment 2: Reinforcement Learning
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](requirements.txt)
+[![Gymnasium](https://img.shields.io/badge/Gymnasium-0.29.1-brightgreen.svg)](https://pypi.org/project/gymnasium/)
+[![NumPy](https://img.shields.io/badge/numpy-1.24+-orange.svg)](https://pypi.org/project/numpy/)
+[![Matplotlib](https://img.shields.io/badge/matplotlib-3.5+-blueviolet.svg)](https://pypi.org/project/matplotlib/)
+[![Jupyter](https://img.shields.io/badge/jupyter-notebook-yellow.svg)](https://jupyter.org/)
+[![PyTorch](https://img.shields.io/badge/pytorch-1.13+-red.svg)](https://pytorch.org/)
+
 
 A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms on the *Acrobot-v1* and *CartPole-v1* environments using **OpenAI Gymnasium**.
 
