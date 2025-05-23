@@ -1,129 +1,112 @@
-# CS6700 Programming Assignment 2: Reinforcement Learning
+# Sample README.md for RL Assignment (CS6700)
 
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](#prerequisites)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](requirements.txt)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) <!-- Optional: Add a license -->
 
-A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms on the *Acrobot-v1* and *CartPole-v1* environments using **OpenAI Gymnasium**.
+## Overview
 
----
+This repository contains the code and analysis for Programming Assignment 2 of the CS6700 Reinforcement Learning course at IIT Madras. It explores and compares the performance of Dueling Deep Q-Networks (Dueling-DQN) and Monte Carlo REINFORCE algorithms on the Acrobot-v1 and CartPole-v1 environments from OpenAI Gymnasium.
 
-### 🧪 Objectives
+**Algorithms Implemented:**
 
-1. **Dueling-DQN**  
-   Implement and evaluate two architectural variants of Dueling-DQN:  
-   - **Type-1**: Mean-normalized advantage  
-   - **Type-2**: Max-normalized advantage  
-   ➤ Analyze and compare their effectiveness on **Acrobot-v1** and **CartPole-v1**.
+*   **Dueling-DQN:** Type-1 (Mean-normalized) and Type-2 (Max-normalized) variants.
+*   **Monte Carlo REINFORCE:** With and without a learned value function baseline.
 
-2. **Monte Carlo REINFORCE**  
-   Implement and evaluate two variants of the REINFORCE algorithm:  
-   - **Without Baseline**  
-   - **With Baseline** (using TD(0) for value function approximation)  
-   ➤ Compare their performance on **Acrobot-v1** and **CartPole-v1**.
-
----
-
-## 📋 Table of Contents
-
-1. [Overview](#overview)
-2. [Environments](#environments)
-3. [Algorithms](#algorithms)
-
-   * [Dueling DQN Variants](#dueling-dqn-variants)
-   * [Monte Carlo REINFORCE Variants](#monte-carlo-reinforce-variants)
-5. [Usage](#usage)
-6. [Results](#results)
-7. [Project Structure](#project-structure)
-
-
----
-
-## 📝 Overview
-
-This repository contains implementations of two model-free RL algorithms:
-
-* **Dueling-DQN**: Enhances DQN by decomposing the Q-function into state-value and advantage streams.
-* **Monte Carlo REINFORCE**: A policy-gradient method using full-episode returns, with and without baseline.
-
-Agents are trained on:
-
-* **Acrobot-v1**: Swing-up control of a two-link pendulum chain.
-* **CartPole-v1**: Balancing a pole on a cart via discrete force actions.
-
-We compare each algorithm’s two variants over 5 random seeds, plotting mean ± variance of episodic returns.
-
----
-## 🎮 Environments
-
-| Environment     | Description                                                        | Documentation Link                                                                 |
-| --------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| **Acrobot-v1**  | Swing the free end of a two-link pendulum above a target height.  | [Acrobot-v1 Docs](https://gymnasium.farama.org/environments/classic_control/acrobot/) |
-| **CartPole-v1** | Balance an inverted pendulum on a cart with left/right forces.    | [CartPole-v1 Docs](https://gymnasium.farama.org/environments/classic_control/cart_pole/) |
-
----
-
-## ⚙️ 2. Algorithms
-
-### 2.1 Dueling DQN Variants
-
-![Dueling-DQN Architecture](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN.JPG)
-
-### 2.2 Monte Carlo REINFORCE Variants
-
-![MC-REINFORCE Update](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte-Carlo%20REINFORCE.JPG) 
----
-
-## ▶️ Usage
-
-### Training
-
-Run the training scripts for each algorithm:
-
-```bash
-# Dueling-DQN (Type-1 vs Type-2) on Acrobot
-python train_dueling_dqn.py --env Acrobot-v1 --variant type1
-python train_dueling_dqn.py --env Acrobot-v1 --variant type2
-
-# REINFORCE (with/without baseline) on CartPole
-python train_reinforce.py --env CartPole-v1 --baseline False
-python train_reinforce.py --env CartPole-v1 --baseline True
-```
-
-All scripts accept these flags:
-
-| Flag         | Description                                 | Default     |
-| ------------ | ------------------------------------------- | ----------- |
-| `--env`      | Gym environment name                        | CartPole-v1 |
-| `--variant`  | `type1` or `type2` for dueling DQN          | type1       |
-| `--baseline` | `True` or `False` for MC-REINFORCE baseline | False       |
-| `--seed`     | Random seed (runs averaged over 5 seeds)    | 0           |
-| `--episodes` | Number of training episodes                 | 500         |
-
----
-
-## 📊 Results
-
-Plots are saved in the `results/` directory. Below are the performance comparisons (mean ± variance over 5 seeds):
-
-|                                                       **Acrobot Dueling-DQN; with Type-1 and Type-2 update rules**                                                       |                                                        **CartPole Dueling-DQN; with Type-1 and Type-2 update rules**                                                       |
-| :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: |
-| ![Acrobot Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_Acrobot-v1_Plot.png) | ![CartPole Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_CartPole_v1_Plot.png) |
-
-
-|                                                               **Acrobot REINFORCE; without Baseline and with Baseline**                                                               |                                                              **CartPole REINFORCE; without Baseline and with Baseline**                                                             |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Acrobot REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_WithOut_BeseLine_Plot.png) | ![CartPole REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_With_BeseLine_Plot.png) |
-
----
-
-## 🗂️ Project Structure
+## Project Structure
 
 ```
-.
-├── train_dueling_dqn.py   # Training script for Dueling-DQN
-├── train_reinforce.py     # Training script for MC-REINFORCE
-├── results/               # Generated plots
-├── README.md              # Project overview
-└── requirements.txt       # Python dependencies
+RL-Assignment-CS6700/
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── notebooks/
+│   └── rl_assignment_2_analysis.ipynb  # Main notebook for running experiments & visualization
+├── src/
+│   ├── __init__.py
+│   ├── agents/                         # Agent implementations
+│   │   ├── __init__.py
+│   │   ├── dueling_dqn.py
+│   │   └── reinforce.py
+│   ├── envs/                           # Environment wrappers (if any)
+│   │   └── __init__.py
+│   ├── utils/                          # Utility functions (plotting, logging)
+│   │   └── __init__.py
+│   └── train.py                        # Example training script (if logic moved from notebook)
+├── results/
+│   ├── plots/                          # Generated plots
+│   │   ├── dueling_dqn_acrobot_comparison.png
+│   │   ├── dueling_dqn_cartpole_comparison.png
+│   │   ├── reinforce_acrobot_baseline_comparison.png
+│   │   └── reinforce_cartpole_baseline_comparison.png
+│   └── models/                         # Saved model checkpoints (optional)
+├── docs/
+│   ├── CS6700_PA2.pdf                  # Original assignment description
+│   └── report.pdf                      # Project report PDF
+└── images/
+    ├── dueling_dqn_architecture.jpg    # Architecture diagram
+    └── reinforce_update_rule.jpg       # Update rule diagram
 ```
 
----
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/RL-Assignment-CS6700.git
+    cd RL-Assignment-CS6700
+    ```
+
+2.  **Create a virtual environment (recommended):**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Usage
+
+All experiments, analysis, and visualizations are primarily conducted within the Jupyter notebook:
+
+1.  **Navigate to the notebooks directory:**
+    ```bash
+    cd notebooks
+    ```
+2.  **Launch Jupyter Lab or Jupyter Notebook:**
+    ```bash
+    jupyter lab
+    # or
+    jupyter notebook
+    ```
+3.  Open and run the cells in `rl_assignment_2_analysis.ipynb`.
+
+*(Optional: If you create separate training scripts in `src/`, provide command-line usage examples here, similar to your original README but pointing to the correct scripts.)*
+
+## Results
+
+The performance comparison plots for Dueling-DQN and REINFORCE variants on both environments are saved in the `results/plots/` directory.
+
+*(Embed key result plots here for quick viewing)*
+
+**Dueling-DQN Comparison (Acrobot-v1)**
+
+![Dueling DQN Acrobot Plot](results/plots/dueling_dqn_acrobot_comparison.png)
+
+**REINFORCE Comparison (CartPole-v1)**
+
+![REINFORCE Cartpole Plot](results/plots/reinforce_cartpole_baseline_comparison.png)
+
+*(Add other relevant plots)*
+
+## Contributing
+
+This repository is primarily for an academic assignment. Contributions are generally not expected. However, if you find issues or have suggestions, feel free to open an issue.
+
+## License
+
+*(Optional: Specify the license, e.g., MIT License. Create a LICENSE file if needed.)*
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
