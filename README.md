@@ -2,7 +2,23 @@
 
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](#prerequisites)
 
-A comparative study of Dueling-DQN and Monte Carlo REINFORCE algorithms on the *Acrobot-v1* and *CartPole-v1* environments using OpenAI Gymnasium.
+A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms on the *Acrobot-v1* and *CartPole-v1* environments using **OpenAI Gymnasium**.
+
+---
+
+### 🧪 Objectives
+
+1. **Dueling-DQN**  
+   Implement and evaluate two architectural variants of Dueling-DQN:  
+   - **Type-1**: Mean-normalized advantage  
+   - **Type-2**: Max-normalized advantage  
+   ➤ Analyze and compare their effectiveness on **Acrobot-v1** and **CartPole-v1**.
+
+2. **Monte Carlo REINFORCE**  
+   Implement and evaluate two variants of the REINFORCE algorithm:  
+   - **Without Baseline**  
+   - **With Baseline** (using TD(0) for value function approximation)  
+   ➤ Compare their performance on **Acrobot-v1** and **CartPole-v1**.
 
 ---
 
@@ -36,23 +52,22 @@ Agents are trained on:
 We compare each algorithm’s two variants over 5 random seeds, plotting mean ± variance of episodic returns.
 
 ---
-
 ## 🎮 Environments
 
-| Environment     | Description                                                                  | Gymnasium Link                                                                                                                                 |
-| --------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Acrobot-v1**  | Apply torques to swing a two-link pendulum to a target height.               | [https://gymnasium.farama.org/environments/classic\_control/acrobot/](https://gymnasium.farama.org/environments/classic_control/acrobot/)      |
-| **CartPole-v1** | Balance an inverted pendulum on a moving cart by applying left/right forces. | [https://gymnasium.farama.org/environments/classic\_control/cart\_pole/](https://gymnasium.farama.org/environments/classic_control/cart_pole/) |
+| Environment     | Description                                                        | Documentation Link                                                                 |
+| --------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| **Acrobot-v1**  | Swing the free end of a two-link pendulum above a target height.  | [Acrobot-v1 Docs](https://gymnasium.farama.org/environments/classic_control/acrobot/) |
+| **CartPole-v1** | Balance an inverted pendulum on a cart with left/right forces.    | [CartPole-v1 Docs](https://gymnasium.farama.org/environments/classic_control/cart_pole/) |
 
 ---
 
-## ⚙️ Algorithms
+## ⚙️ 2. Algorithms
 
-### Dueling DQN Variants
+### 2.1 Dueling DQN Variants
 
 ![Dueling-DQN Architecture](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN.JPG)
 
-### Monte Carlo REINFORCE Variants
+### 2.2 Monte Carlo REINFORCE Variants
 
 ![MC-REINFORCE Update](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte-Carlo%20REINFORCE.JPG) 
 ---
@@ -89,12 +104,12 @@ All scripts accept these flags:
 
 Plots are saved in the `results/` directory. Below are the performance comparisons (mean ± variance over 5 seeds):
 
-|                                                       **Acrobot Dueling-DQN**                                                       |                                                        **CartPole Dueling-DQN**                                                       |
+|                                                       **Acrobot Dueling-DQN; with Type-1 and Type-2 update rules**                                                       |                                                        **CartPole Dueling-DQN; with Type-1 and Type-2 update rules**                                                       |
 | :---------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------: |
 | ![Acrobot Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_Acrobot-v1_Plot.png) | ![CartPole Dueling-DQN](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Dueling-DQN_CartPole_v1_Plot.png) |
 
 
-|                                                               **Acrobot REINFORCE**                                                               |                                                              **CartPole REINFORCE**                                                             |
+|                                                               **Acrobot REINFORCE; without Baseline and with Baseline**                                                               |                                                              **CartPole REINFORCE; without Baseline and with Baseline**                                                             |
 | :-----------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
 | ![Acrobot REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_WithOut_BeseLine_Plot.png) | ![CartPole REINFORCE](https://raw.githubusercontent.com/ahmecse/RL-Assignments-2-IITM-CS6700/main/Monte_Carlo_REINFORCE_With_BeseLine_Plot.png) |
 
