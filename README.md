@@ -31,6 +31,7 @@ A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms 
 5.  [Setup & Installation](#🚀-setup--installation)
 6.  [Usage](#▶️-usage)
 7.  [Results](#📊-results)
+8.  [References](##🔖-References)
 
 
 ---
@@ -199,3 +200,14 @@ Performance comparison plots (averaged over 5 seeds, showing mean ± std dev) ar
 **Summary of Findings:**
 - Both Dueling-DQN update rules proved effective, converging similarly on Acrobot-v1, while Type-2 showed potential for higher rewards but increased variance on CartPole-v1. 
 - Adding a baseline to Monte Carlo REINFORCE dramatically improved performance and stability (reduced variance) compared to the baseline-free version across both environments, especially on Acrobot-v1.
+---
+
+## 🔖 References
+
+1. Wang, Z., Schaul, T., Hessel, M., Van Hasselt, H., Silver, D., & de Freitas, N. (2016). *Dueling Network Architectures for Deep Reinforcement Learning*. In Proceedings of the 33rd International Conference on Machine Learning (ICML’16).  
+2. Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., … & Hassabis, D. (2015). *Human-level control through deep reinforcement learning*. Nature, 518(7540), 529–533.  
+3. Williams, R. J. (1992). *Simple statistical gradient-following algorithms for connectionist reinforcement learning*. Machine Learning, 8(3–4), 229–256.  
+4. Sutton, R. S., & Barto, A. G. (2018). *Reinforcement Learning: An Introduction* (2nd ed.). MIT Press.  
+5. Gymnasium CartPole-v1 Environment. Retrieved from https://gymnasium.farama.org/environments/classic_control/cart_pole/  
+6. Gymnasium Acrobot-v1 Environment. Retrieved from https://gymnasium.farama.org/environments/classic_control/acrobot/  
+
