@@ -8,32 +8,30 @@ A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms 
 
 ## 🧪 Objectives
 
-1.  **Dueling-DQN**
-    Implement and evaluate two architectural variants of the Dueling Deep Q-Network:
-    *   **Type-1**: Mean-normalized advantage
-    *   **Type-2**: Max-normalized advantage
+1.  **Dueling-DQN**  
+    Implement and evaluate two architectural variants of the Dueling Deep Q-Network:  
+    * **Type-1**: Mean-normalized advantage  
+    * **Type-2**: Max-normalized advantage  
     ➤ Compare their performance on **Acrobot-v1** and **CartPole-v1**.
 
-2.  **Monte Carlo REINFORCE**
-    Implement and evaluate:
-    *   **Without Baseline**
-    *   **With Baseline** (using a learned value function as baseline, e.g., via TD(0))
+2.  **Monte Carlo REINFORCE**  
+    Implement and evaluate:  
+    * **Without Baseline**  
+    * **With Baseline** (using a learned value function as baseline, e.g., via TD(0))  
     ➤ Compare both on **Acrobot-v1** and **CartPole-v1**.
 
 ---
 
 ## 📋 Table of Contents
 
-1.  [Overview](#📝-overview)
-2.  [Project Structure](#🗂️-project-structure)
-3.  [Environments](#🎮-environments)
-4.  [Algorithms](#⚙️-algorithms)
-5.  [Setup & Installation](#🚀-setup--installation)
-6.  [Usage](#▶️-usage)
-7.  [Results](#📊-results)
-8.  [References](#🔖-references)
-
-
+1.  [Overview](#📝-overview)  
+2.  [Project Structure](#🗂️-project-structure)  
+3.  [Environments](#🎮-environments)  
+4.  [Algorithms](#⚙️-algorithms)  
+5.  [Setup & Installation](#🚀-setup--installation)  
+6.  [Usage](#▶️-usage)  
+7.  [Results](#📊-results)  
+8.  [References](#🔖-references)  
 
 ---
 
@@ -41,20 +39,19 @@ A comparative study of **Dueling-DQN** and **Monte Carlo REINFORCE** algorithms 
 
 This repository contains implementations (primarily notebook-based, with optional script support) of two model-free reinforcement learning algorithms:
 
-*   **Dueling-DQN**: An enhancement of DQN that separates state-value and action-advantage estimation.
-*   **Monte Carlo REINFORCE**: A policy-gradient algorithm trained using full episode returns, with and without a baseline.
+* **Dueling-DQN**: Separates state-value and action-advantage estimation.  
+* **Monte Carlo REINFORCE**: Policy-gradient trained using full episode returns, with and without a baseline.
 
-Both algorithms are evaluated on:
+Both are evaluated on:
 
-*   **Acrobot-v1**: Control a two-link pendulum to swing its free end above a target height.
-*   **CartPole-v1**: Balance an inverted pole on a cart by applying discrete left/right forces.
+* **Acrobot-v1**: Swing a two-link pendulum to a target height.  
+* **CartPole-v1**: Balance an inverted pole on a cart.  
 
-Results are averaged over 5 random seeds and visualized with mean ± standard deviation plots.
+Results are averaged over 5 random seeds and shown as mean ± std dev plots.
 
 ---
 
 ## 🗂️ Project Structure
-
 ```
 RL-Assignment-CS6700/
 ├── .gitignore
@@ -90,12 +87,14 @@ RL-Assignment-CS6700/
 
 ---
 
+---
+
 ## 🎮 Environments
 
-| Environment     | Task Description                                        | Docs Link                                                                    |
-| :-------------- | :------------------------------------------------------ | :--------------------------------------------------------------------------- |
-| **Acrobot-v1**  | Swing a two-link pendulum up to reach a fixed height. | [Acrobot Docs](https://gymnasium.farama.org/environments/classic_control/acrobot/) |
-| **CartPole-v1** | Balance an inverted pole using discrete cart movements. | [CartPole Docs](https://gymnasium.farama.org/environments/classic_control/cart_pole/) |
+| Environment     | Task Description                                     | Docs Link                                                                 |
+| --------------- | ---------------------------------------------------- | ------------------------------------------------------------------------- |
+| **Acrobot-v1**  | Swing a two-link pendulum to reach a fixed height.  | [Acrobot Docs](https://gymnasium.farama.org/environments/classic_control/acrobot/) |
+| **CartPole-v1** | Balance an inverted pole by moving a cart left/right. | [CartPole Docs](https://gymnasium.farama.org/environments/classic_control/cart_pole/)   |
 
 ---
 
@@ -103,25 +102,21 @@ RL-Assignment-CS6700/
 
 ### Dueling-DQN Variants
 
-Implements the Dueling Network Architecture which separates the Q-value calculation into state value (V(s)) and action advantage (A(s,a)). 
-
+Separates Q(s,a) into V(s) + A(s,a).  
 ![Dueling-DQN Architecture](images/dueling_dqn_architecture.jpg)
 
-Two methods for combining V(s) and A(s,a) (Type-1: Mean Normalization, Type-2: Max Normalization) are implemented and compared.
+- **Type-1:** Mean-normalized advantage  
+- **Type-2:** Max-normalized advantage  
 
 ### Monte Carlo REINFORCE Variants
 
-A policy gradient algorithm that updates policy parameters based on the return from complete episodes. 
-
+Policy-gradient updates based on full-episode returns.  
 ![REINFORCE Update Rule](images/reinforce_update_rule.jpg)
 
-Two variants are implemented:
-
-*   **Without Baseline:** Uses the raw episode return G_t.
-*   **With Baseline:** Subtracts a learned state-value function V(s_t) from the return G_t to reduce variance.
+- **Without Baseline:** Uses raw return \(G_t\).  
+- **With Baseline:** Subtracts learned \(V(s_t)\) for variance reduction.
 
 ---
-
 ## 🚀 Setup & Installation
 
 1.  **Clone the repository:**
@@ -145,7 +140,7 @@ Two variants are implemented:
 
 ## ▶️ Usage
 
-There are two primary ways to run the experiments:
+There are two primary ways to explore this project:
 
 **Option 1: Jupyter Notebook (Recommended)**
 
@@ -159,11 +154,13 @@ There are two primary ways to run the experiments:
     # or
     # jupyter notebook
     ```
-3.  Open `rl_assignment_2_analysis.ipynb` and execute the cells sequentially. This notebook contains the implementation, training loops, and plotting logic.
+3.  Open [rl_assignment_2_analysis.ipynb](https://github.com/ahmecse/RL-Assignments-2-IITM-CS6700/blob/main/notebooks/rl_assignment_2_analysis.ipynb) and execute the cells sequentially. This notebook contains the implementation, training loops, and plotting logic.
 
-**Option 2: Command-Line Scripts (If `src/train.py` is implemented)**
+> **Full Report:** For detailed methodology, hyperparameter choices, and extended analysis, see the [Project Report](https://github.com/ahmecse/RL-Assignments-2-IITM-CS6700/blob/main/docs/report.pdf).
 
-If you have refactored the training logic into `src/train.py`, you can run experiments from the command line:
+---
+
+**Option 2: Command-Line Scripts**
 
 ```bash
 # Example: Dueling-DQN Type-1 on Acrobot
@@ -171,7 +168,6 @@ python src/train.py --algo dueling_dqn --env Acrobot-v1 --variant type1 --episod
 
 # Example: REINFORCE with Baseline on CartPole
 python src/train.py --algo reinforce --env CartPole-v1 --baseline True --episodes 500
-```
 
 **Available Flags (for `src/train.py`):**
 
@@ -183,7 +179,7 @@ python src/train.py --algo reinforce --env CartPole-v1 --baseline True --episode
 | `--baseline` | Use baseline in REINFORCE (`True` or `False`)    | `True`           | `False`     |
 | `--episodes` | Number of training episodes                      | `500`            | `500`       |
 | `--seed`     | Random seed for reproducibility                  | `42`             | `0`         |
-
+```
 ---
 
 ## 📊 Results
